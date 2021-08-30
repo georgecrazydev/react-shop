@@ -1,0 +1,241 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f2f3f4;
+  color: #000;
+}
+
+.wrapper {
+  max-width: 1080px;
+  margin: 100px auto 0;
+  background-color: #fff;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 20px;
+}
+
+.overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+// Drawer start !!!
+.drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 420px;
+  height: 100%;
+  padding: 30px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  .drawerTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    h3 {
+      font-weight: 700;
+      font-size: 24px;
+    }
+  }
+  .drawerItems {
+    flex: 1;
+    overflow: auto;
+    margin-bottom: 25px;
+  }
+  .drawerItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 325px;
+    padding: 20px;
+    border: 1px solid #f3f3f3;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    img {
+      display: block;
+    }
+    div {
+      p {
+        margin-bottom: 8px;
+      }
+    }
+  }
+  .drawerBottom {
+    ul {
+      li {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        p {
+          font-weight: 400;
+          font-size: 16px;
+        }
+        div {
+          border-bottom: 1px dashed #dfdfdf;
+          flex: 1;
+          margin: 0 8px;
+        }
+        b {
+          font-weight: 600;
+          font-size: 16px;
+        }
+      }
+    }
+    .buttonSubmit {
+      width: 325px;
+      padding: 18px 0;
+      background-color: #9dd558;
+      border-radius: 18px;
+      font-weight: 600;
+      font-size: 16px;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.2s ease;
+      img {
+        position: absolute;
+        top: 50%;
+        right: 25px;
+        transform: translateY(-50%);
+        transition: all 0.2s ease;
+      }
+      &:hover {
+        background-color: lighten(#9dd558, 5%);
+        img {
+          right: 20px;
+        }
+      }
+      &:active {
+        background-color: darken(#9dd558, 10%);
+      }
+    }
+  }
+  .buttonClose {
+    border: 0;
+    background-color: #fff;
+    outline: none;
+    cursor: pointer;
+    border: 1px solid #978f8f;
+    border-radius: 7px;
+    padding: 10px;
+    opacity: 0.5;
+    transition: all 0.2s ease;
+    img {
+      display: block;
+    }
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+// Drawer end !!!
+
+// Header start !!!
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 45px;
+  .headerLeft {
+    display: flex;
+    align-items: center;
+    img {
+      margin-right: 16px;
+    }
+    div {
+      h3 {
+        font-weight: 700;
+        font-size: 18px;
+        text-transform: uppercase;
+      }
+      p {
+        color: #9d9d9d;
+      }
+    }
+  }
+  .headerRight {
+    display: flex;
+    align-items: center;
+    li {
+      display: flex;
+      align-items: center;
+      & + li {
+        margin-left: 30px;
+      }
+      img {
+        cursor: pointer;
+      }
+      span {
+        margin-left: 10px;
+        font-weight: 600;
+        color: #5c5c5c;
+      }
+    }
+  }
+}
+// Header end !!!
+
+// Content start !!!
+.content {
+  padding: 45px;
+  .contentTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    h1 {
+      font-weight: 700;
+      font-size: 32px;
+    }
+    div {
+      position: relative;
+      input {
+        width: 250px;
+        padding: 15px 10px 15px 45px;
+        border: 1px solid #f3f3f3;
+        box-sizing: border-box;
+        border-radius: 10px;
+        outline: none;
+        font-size: 14px;
+        &::placeholder {
+          color: #c4c4c4;
+        }
+      }
+      img {
+        position: absolute;
+        top: 50%;
+        left: 18px;
+        transform: translateY(-50%);
+        cursor: pointer;
+      }
+    }
+  }
+}
+// Content end !!!
+
+// Card start !!!
+.cardItems {
+  display: flex;
+  flex-wrap: wrap;
+}
+// Card end !!!

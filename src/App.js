@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header';
+import Drawer from './components/Drawer';
+import Card from './components/Card';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <div className="overlay">
+        <Drawer />
+      </div>
+      <Header />
+      <div className="content">
+        <div className="contentTop">
+          <h1>All the clothing</h1>
+          <div className="search">
+            <input type="text" placeholder="Search..." />
+            <img src="./img/search.svg" alt="search" width={15} height={15} />
+          </div>
+        </div>
+        <div className="cardItems">
+          <Card />
+        </div>
+      </div>
     </div>
   );
 }
