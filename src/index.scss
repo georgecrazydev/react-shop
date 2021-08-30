@@ -18,14 +18,13 @@ body {
 
 .wrapper {
   max-width: 1080px;
-  margin: 100px auto 0;
+  margin: 50px auto 0;
   background-color: #fff;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04);
   border-radius: 20px;
 }
 
 .overlay {
-  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -74,6 +73,8 @@ body {
       display: block;
     }
     div {
+      margin-left: 20px;
+      flex: 1;
       p {
         margin-bottom: 8px;
       }
@@ -101,7 +102,7 @@ body {
       }
     }
     .buttonSubmit {
-      width: 325px;
+      width: 100%;
       padding: 18px 0;
       background-color: #9dd558;
       border-radius: 18px;
@@ -179,6 +180,7 @@ header {
     li {
       display: flex;
       align-items: center;
+      cursor: pointer;
       & + li {
         margin-left: 30px;
       }
@@ -236,6 +238,7 @@ header {
 // Card start !!!
 .cardItems {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 // Card end !!!

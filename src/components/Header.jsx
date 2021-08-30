@@ -1,4 +1,4 @@
-function Header() {
+function Header({ openCart }) {
   return (
     <header>
       <div className="headerLeft">
@@ -9,12 +9,12 @@ function Header() {
         </div>
       </div>
       <ul className="headerRight">
-        <li>
+        <li onClick={openCart}>
           <img src="./img/cart.svg" alt="cart" width={20} height={20} />
           <span>250 gel.</span>
         </li>
         <li>
-          <img src="./img/unliked.svg" alt="liked" width={20} height={20} />
+          <img src="./img/liked.svg" alt="liked" width={20} height={20} />
         </li>
         <li>
           <img src="./img/user.svg" alt="user" width={20} height={20} />

@@ -1,25 +1,16 @@
 .card {
-  width: 230px;
-  padding: 35px;
+  width: 220px;
+  padding: 25px;
   border: 1px solid #f3f3f3;
   border-radius: 40px;
   cursor: pointer;
   transition: all 0.2s ease;
-  margin: 20px;
+  margin: 10px;
 
-  .buttonUnliked {
-    border: 0;
-    background-color: #fff;
-    outline: none;
-    cursor: pointer;
-    border: 1px solid #f3f3f3;
-    border-radius: 7px;
-    padding: 10px;
-    margin-bottom: 5px;
-    img {
-      display: block;
-    }
+  img {
+    display: block;
   }
+
   .cardImg {
     display: block;
     margin: 0 auto 15px;
@@ -45,17 +36,8 @@
         font-weight: 700;
       }
     }
-    .buttonPlus {
-      border: 0;
-      background-color: #fff;
-      outline: none;
-      cursor: pointer;
-      border: 1px solid #f3f3f3;
-      border-radius: 7px;
-      padding: 10px;
-      img {
-        display: block;
-      }
+    img {
+      display: block;
     }
   }
   &:hover {

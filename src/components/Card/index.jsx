@@ -1,27 +1,38 @@
+import React, { useState } from 'react';
+
 import styles from './Card.module.scss';
 
-function Card() {
+function Card({ title, price, img, onAdd }) {
+  const [add, setAdd] = useState(false);
+
+  const onClickAdd = () => {
+    onAdd({ title, price, img });
+    setAdd(!add);
+  };
+
   return (
     <div className={styles.card}>
-      <button className={styles.buttonUnliked}>
-        <img src="./img/unliked.svg" alt="unliked" width={15} height={13} />
-      </button>
+      <img src="./img/unliked.svg" alt="unliked" width={32} height={32} />
       <img
         className={styles.cardImg}
-        src="./img/1.png"
+        src={img}
         alt="img"
         width={150}
         height={150}
       />
-      <h5>Turtleneck sweater</h5>
+      <h5>{title}</h5>
       <div className={styles.cardInfo}>
         <div>
           <p>Price:</p>
-          <b>25.99 gel.</b>
+          <b>{price} gel.</b>
         </div>
-        <button className={styles.buttonPlus}>
-          <img src="./img/plus.svg" alt="plus" width={11} height={11} />
-        </button>
+        <img
+          onClick={onClickAdd}
+          src={add ? './img/added.svg' : './img/add.svg'}
+          alt="plus"
+          width={32}
+          height={32}
+        />
       </div>
     </div>
   );
