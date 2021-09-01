@@ -16,6 +16,10 @@ body {
   color: #000;
 }
 
+a {
+  color: inherit;
+}
+
 .wrapper {
   max-width: 1080px;
   margin: 50px auto 0;
@@ -53,6 +57,25 @@ body {
     h3 {
       font-weight: 700;
       font-size: 24px;
+    }
+  }
+  .drawerEmpty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    img {
+      display: block;
+      margin-bottom: 21px;
+    }
+    h4 {
+      font-weight: 600;
+      font-size: 22px;
+      margin-bottom: 9px;
+    }
+    p {
+      font-size: 16px;
+      margin-bottom: 40px;
     }
   }
   .drawerItems {
@@ -131,19 +154,11 @@ body {
       }
     }
   }
-  .buttonClose {
-    border: 0;
-    background-color: #fff;
-    outline: none;
+  .closeButton {
+    display: block;
     cursor: pointer;
-    border: 1px solid #978f8f;
-    border-radius: 7px;
-    padding: 10px;
     opacity: 0.5;
     transition: all 0.2s ease;
-    img {
-      display: block;
-    }
     &:hover {
       opacity: 1;
     }
@@ -209,11 +224,12 @@ header {
       font-weight: 700;
       font-size: 32px;
     }
-    div {
+
+    .search {
       position: relative;
       input {
         width: 250px;
-        padding: 15px 10px 15px 45px;
+        padding: 15px 25px 15px 45px;
         border: 1px solid #f3f3f3;
         box-sizing: border-box;
         border-radius: 10px;
@@ -230,15 +246,63 @@ header {
         transform: translateY(-50%);
         cursor: pointer;
       }
+      .buttonClose {
+        top: 50%;
+        left: 225px;
+        transform: translateY(-50%);
+        cursor: pointer;
+      }
     }
   }
 }
 // Content end !!!
 
 // Card start !!!
+
 .cardItems {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 // Card end !!!
+.greenButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  .buttonBack {
+    &:disabled {
+      background-color: #ccc;
+      cursor: none;
+    }
+    margin: 0 auto;
+    width: 245px;
+    padding: 20px 0;
+    background-color: #9dd558;
+    border-radius: 18px;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+    img {
+      position: absolute;
+      top: 50%;
+      left: 25px;
+      transform: translateY(-50%);
+      transition: all 0.2s ease;
+    }
+    &:hover {
+      background-color: lighten(#9dd558, 5%);
+      img {
+        left: 20px;
+      }
+    }
+    &:active {
+      background-color: darken(#9dd558, 10%);
+    }
+  }
+}
