@@ -39,14 +39,14 @@ function Home({
             type="text"
             placeholder="Search..."
           />
-          <img src="./img/search.svg" alt="search" width={15} height={15} />
+          <img src="img/search.svg" alt="search" width={15} height={15} />
           {searchValue && (
             <img
               onClick={() => {
                 setSearchValue('');
               }}
               className="buttonClose"
-              src="./img/close.svg"
+              src="img/close.svg"
               alt="search"
               width={15}
               height={15}

@@ -18,7 +18,7 @@ function Info({ title, image, description }) {
         }}
       >
         <span>Back</span>
-        <img src="./img/arrowLeft.svg" alt="arrow" />
+        <img src="img/arrowLeft.svg" alt="arrow" />
       </button>
     </div>
   );

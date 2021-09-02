@@ -18,12 +18,14 @@ function Card({
   const { isItemAdded } = useContext(AppContext);
   const [favoriteItems, setFavoriteItems] = useState(isFavorite);
 
+  let obj = { id, parentId: id, title, price, imageUrl };
+
   const onClickAdd = () => {
-    onAdd({ id, title, price, imageUrl });
+    onAdd(obj);
   };
 
   const onClickFavorite = () => {
-    onFavorite({ id, title, price, imageUrl });
+    onFavorite(obj);
     setFavoriteItems(!favoriteItems);
   };
 
@@ -46,14 +48,16 @@ function Card({
         </ContentLoader>
       ) : (
         <div>
-          {' '}
-          <img
-            onClick={onClickFavorite}
-            src={favoriteItems ? './img/favorite.svg' : './img/unliked.svg'}
-            alt="unliked"
-            width={32}
-            height={32}
-          />
+          {onFavorite && (
+            <img
+              onClick={onClickFavorite}
+              src={favoriteItems ? 'img/favorite.svg' : 'img/unliked.svg'}
+              alt="unliked"
+              width={32}
+              height={32}
+            />
+          )}
+
           <img
             className={styles.cardImg}
             src={imageUrl}
@@ -67,13 +71,15 @@ function Card({
               <p>Price:</p>
               <b>{price} ₾.</b>
             </div>
-            <img
-              onClick={onClickAdd}
-              src={isItemAdded(id) ? './img/added.svg' : './img/add.svg'}
-              alt="plus"
-              width={32}
-              height={32}
-            />
+            {onAdd && (
+              <img
+                onClick={onClickAdd}
+                src={isItemAdded(id) ? 'img/added.svg' : 'img/add.svg'}
+                alt="plus"
+                width={32}
+                height={32}
+              />
+            )}
           </div>
         </div>
       )}

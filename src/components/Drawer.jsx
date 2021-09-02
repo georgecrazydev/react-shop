@@ -11,6 +11,10 @@ function Drawer({ closeCart, cartItems, onRemove }) {
   const [orderId, setOrderId] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
+  const totalPrice = cartItems.reduce((sum, item) => {
+    return sum + item.price;
+  }, 0);
+
   const onClickOrder = async () => {
     try {
       setIsLoading(true);
@@ -40,7 +44,7 @@ function Drawer({ closeCart, cartItems, onRemove }) {
           <img
             onClick={closeCart}
             className="closeButton"
-            src="./img/close.svg"
+            src="img/close.svg"
             alt="close"
             width={32}
             height={32}
@@ -63,7 +67,7 @@ function Drawer({ closeCart, cartItems, onRemove }) {
                         onRemove(item.id);
                       }}
                       className="closeButton"
-                      src="./img/close.svg"
+                      src="img/close.svg"
                       alt="close"
                       width={32}
                       height={32}
@@ -77,12 +81,12 @@ function Drawer({ closeCart, cartItems, onRemove }) {
                 <li>
                   <p>Total:</p>
                   <div></div>
-                  <b>100 ₾.</b>
+                  <b>{totalPrice} ₾.</b>
                 </li>
                 <li>
                   <p>Tax 10%:</p>
                   <div></div>
-                  <b>10 ₾.</b>
+                  <b>{totalPrice * 0.05} ₾.</b>
                 </li>
               </ul>
               <button
@@ -91,7 +95,7 @@ function Drawer({ closeCart, cartItems, onRemove }) {
                 className="buttonSubmit"
               >
                 <span>Checkout</span>
-                <img src="./img/arrow.svg" alt="arrow" width={14} height={12} />
+                <img src="img/arrow.svg" alt="arrow" width={14} height={12} />
               </button>
             </div>
           </>
@@ -103,7 +107,7 @@ function Drawer({ closeCart, cartItems, onRemove }) {
                 ? `Your order # ${orderId} will be delivered by courier soon`
                 : 'Add at least one pair of clothing'
             }
-            image={isOrderCompleted ? './img/order.png' : './img/empty.png'}
+            image={isOrderCompleted ? 'img/order.png' : 'img/empty.png'}
           />
         )}
       </div>
