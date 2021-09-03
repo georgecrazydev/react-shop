@@ -10,7 +10,7 @@ function Header({ openCart }) {
   }, 0);
   return (
     <header>
-      <Link to="/">
+      <Link to={process.env.PUBLIC_URL + '/'}>
         <div className="headerLeft">
           <img src="img/logo.svg" alt="logo" width={40} height={40} />
 
@@ -26,12 +26,12 @@ function Header({ openCart }) {
           <span>{totalPrice} ₾.</span>
         </li>
         <li>
-          <Link to="/favorites">
+          <Link to={process.env.PUBLIC_URL + '/favorites'}>
             <img src="img/liked.svg" alt="liked" width={20} height={20} />
           </Link>
         </li>
         <li>
-          <Link to="/orders">
+          <Link to={process.env.PUBLIC_URL + '/orders'}>
             <img src="img/user.svg" alt="user" width={20} height={20} />
           </Link>
         </li>

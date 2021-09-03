@@ -144,7 +144,7 @@ function App() {
             setCart(true);
           }}
         />
-        <Route path="" exact>
+        <Route path={process.env.PUBLIC_URL + '/'} exact>
           <Home
             goods={goods}
             cartItems={cartItems}
@@ -156,11 +156,11 @@ function App() {
             isLoading={isLoading}
           />
         </Route>
-        <Route path="favorites" exact>
+        <Route path={process.env.PUBLIC_URL + '/favorites'} exact>
           <Favorites onAddFavorite={onAddFavorite} onAddToCart={onAddToCart} />
         </Route>
 
-        <Route path="orders" exact>
+        <Route path={process.env.PUBLIC_URL + '/orders'} exact>
           <Orders />
         </Route>
       </div>
